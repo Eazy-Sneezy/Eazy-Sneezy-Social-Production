@@ -26,22 +26,22 @@
   <section>
     <div class="feed-container">
       <ul>
-        <% for(var i=0; i<entries.length; i++) {%>
+        <% for(var i=0; i<entry.length; i++) {%>
         <li class="card">
           <div class="entry-topper">
             <div class="entry-title">
-              <p><%= entries[i].title%></p>
+              <p><%= entry[i].title%></p>
             </div>
             <div class="entry-author">
-              <p>By: <%= entries[i].author%></p>
+              <p>By: <%= entry[i].author%></p>
             </div>
           </div>
-          <a href="/entries/<%= entries[i]._id%>">
+          <a href="/entries/<%= entry[i]._id%>">
             <img class="feed-img" src="<%= entries[i].image%>">
           </a>
           <div>
             <span class="fa fa-heart"></span>
-            <span><%= entries[i].likeCount %></span>
+            <span><%= entry[i].likeCount %></span>
           </div>
         </li>
         <% } %>
