@@ -134,7 +134,8 @@ table {
 }
 
 /* Base Looks */
-p{
+p,
+.entry-title>h2 {
     font-family: 'Gill Sans',
     'Gill Sans MT',
     Calibri,
@@ -368,6 +369,20 @@ input {
 
 /* Entry */
 
+.like-delete{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.like-delete > form {
+    width: 4rem;
+    padding: 10px 0;
+}
+/* Profile */
 .profile-body {
     display: flex;
     flex-direction: column;

@@ -3,7 +3,20 @@
 </head>
 
 <body>
-    <!--Entries-->
+    <section class="topnav">
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            <h1><a href="/profile" class="active">Eazy Sneezy Social</a></h1>
+        </div>
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href="/feed">Feed</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+
+        </div>
+    </section>
+    <!--Entry-->
     <section>
         <div class="feed-container">
             <ul>
@@ -17,7 +30,7 @@
                     </div>
                     <img class="entry-img" src="../<%= entry.image%>" />
 
-                    <div>
+                    <div class="like-delete">
                         <%if(entry.likes.includes(user.id)){%>
                         <form action="/entries/unlikeEntry/<%= entry.id %>?_method=PUT" method="POST">
                             <button type="submit">unLike</button>
@@ -26,10 +39,9 @@
                         <form action="/entries/likeEntry/<%= entry.id %>?_method=PUT" method="POST">
                             <button type="submit">Like</button>
                         </form>
-                        <%} %>
 
-                        <h3>Likes: <%= entry.likeCount %>
-                        </h3>
+                        <%} %>
+                        <span>Likes: <%= entry.likeCount %></span>
                         <%if(entry.user==user.id){ %>
                         <form action="/entries/deleteEntry/<%= entry.id %>?_method=DELETE" method="POST">
                             <button type="submit">Delete</button>
