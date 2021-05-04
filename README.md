@@ -27,12 +27,16 @@ _**Like Button Toggle**_ - We could have done this many ways, of course, but ult
 
 ## Lessons learned
 
-_**Collaboration**_ - we worked together as a team to divvy tasks and to check in with each other about our work. We built branches and made PRs, tested and reviewed each other's code, and we learned a lot about how to use Github to track and develop our workflow.
+_**Collaboration**_ - we worked together as a team to divvy tasks and to check in with each other about our work. We built branches and made PRs, tested and reviewed each other's code, and we learned a lot about how to use Github to track and develop our workflow.  Communication was key in very helpful in keeping everything clear and easy to navigate.  Documentation and issue assignment is especially helpful in knowing what others are focusing to prevent double working.
 
-_**Version Control**_ - there were a few times we had to back track to figure out what went wrong. From `git checkout <branch-name>` to `git log` and `git checkout -b <new-branch-name>` to figuring out how to reconsile merge conflicts, we picked up quite a bit along the way.
+_**Version Control**_ - there were a few times we had to back track to figure out what went wrong. From `git checkout <branch-name>` to `git log` and `git checkout -b <new-branch-name>` to figuring out how to reconsile merge conflicts, we picked up quite a bit along the way.  
 
 _**Debugging**_ - in several occasions some piece of our code wasn't doing what we thought we wrote down. We got practice in going through our own code as a team and find which line or lines had issues. 
 
-_**MVC**_ - this project was a huge help to internalize the inner workings of the model-view-controller design pattern. We learned hands-on how each piece of code can communicate with other sections of the server.
+_**MVC**_ - this project was a huge help to internalize the inner workings of the model-view-controller design pattern. We learned hands-on how each piece of code can communicate with other sections of the server.  The amount of detailed knowledge about the MVC we are still learing is huge and helps to bring everything full-circle.
 
 _**Authentication**_ - we learned how to add authentication functionality using local-passport, with our users being recorded into a database.
+
+_**Styling**_ - we had the chance to focus on some front-end methods like flex and content-alignment.
+
+_**User Interface Design**_ - we learned how to make a UI model with consideration for creative input.  Also, while creating it there was an opportunity to visualize all the functions the user will have access to using our app.
