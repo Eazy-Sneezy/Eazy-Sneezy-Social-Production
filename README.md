@@ -23,20 +23,20 @@ _**Controllers**_ We have 3 controllers: homeController, authController, and ent
 
 We used to have authentications routes at first. We then realized that most authentications requests came from the home route, so we integrated auth routes alongside the home routes to show how every part of the server is connected. We'll add like/unlike functionality into the feed page, instead of only being able to like entries once you open that specific entry.
 
-_**Like Button Toggle**_ - We could have done this many ways, of course, but ultimately, we went with checking in the EJS if the user's id was included in the entry's likes array. If so, display the unlike functionality, which is linked to the unlike method in the entry controller, and if not, display the like functionality, which is linked to the like method instead.
+_**Like Button Toggle**_ - For toggling a like button with a specific user, we went with checking within the EJS entry file if the user's id was included in the entry's likes array. If so, the EJS would display the unlike functionality, which is linked to the unlike method in the entry controller. Otherwise, it would display the like functionality, which is linked to the like method in the entry controller.
 
 ## Lessons learned
 
-_**Collaboration**_ - we worked together as a team to divvy tasks and to check in with each other about our work. We built branches and made PRs, tested and reviewed each other's code, and we learned a lot about how to use Github to track and develop our workflow.  Communication was key in very helpful in keeping everything clear and easy to navigate.  Documentation and issue assignment is especially helpful in knowing what others are focusing to prevent double working.
+_**Collaboration**_ - We worked together as a team to separate tasks and to check in with each other about our work. We built branches and made PRs, tested and reviewed each other's code, and we learned a lot about how to use Github to track and develop our workflow.  Communication was key in very helpful in keeping everything clear and easy to navigate.  Documentation and issue assignment was especially helpful in knowing what other team members are focusing to prevent overlapping work assignments.
 
-_**Version Control**_ - there were a few times we had to back track to figure out what went wrong. From `git checkout <branch-name>` to `git log` and `git checkout -b <new-branch-name>` to figuring out how to reconsile merge conflicts, we picked up quite a bit along the way.  
+_**Version Control**_ - There were a few times we had to back track to figure out what went wrong. From `git checkout <branch-name>` to `git log` and `git checkout -b <new-branch-name>` to figuring out how to reconsile merge conflicts, we became more familiar with using a variety of git commands.  
 
-_**Debugging**_ - in several occasions some piece of our code wasn't doing what we thought we wrote down. We got practice in going through our own code as a team and find which line or lines had issues. 
+_**Debugging**_ - On several occasions, some sections of our codebase wasn't doing what we originally intended. We got practice in going through our own code as a team and find which line or lines had issues. 
 
-_**MVC**_ - this project was a huge help to internalize the inner workings of the model-view-controller design pattern. We learned hands-on how each piece of code can communicate with other sections of the server.  The amount of detailed knowledge about the MVC we are still learing is huge and helps to bring everything full-circle.
+_**MVC**_ - This project was a huge help to internalize the inner workings of the model-view-controller design pattern. We learned hands-on how each piece of code can communicate with other sections of the server.  The amount of detailed knowledge about the MVC we have learned through this project is quite significant and working through it increased our oveall understanding of MVC.
 
-_**Authentication**_ - we learned how to add authentication functionality using local-passport, with our users being recorded into a database.
+_**Authentication**_ - We learned how to add authentication functionality using local-passport, with our users being recorded into a database.
 
-_**Styling**_ - we had the chance to focus on some front-end methods like flex and content-alignment.
+_**Styling**_ - We had the chance to focus on some front-end methods like flex and content-alignment with CSS.
 
-_**User Interface Design**_ - we learned how to make a UI model with consideration for creative input.  Also, while creating it there was an opportunity to visualize all the functions the user will have access to using our app.
+_**User Interface Design**_ - We learned how to make a UI model with consideration for creative input.  Also, while creating it there was an opportunity to visualize all the functions the user will have access to using our app.
