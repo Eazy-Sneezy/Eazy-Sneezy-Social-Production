@@ -27,8 +27,13 @@
                                 <%= entry.title %>
                             </h2>
                         </div>
+                        <div>
+                          <h2><%= entry.author%></h2>
+                        </div>
                     </div>
                     <img class="entry-img" src="../<%= entry.image%>" />
+
+                    <p id="caption"><%= entry.caption%></p>
 
                     <div class="like-delete">
                         <%if(entry.likes.includes(user.id)){%>

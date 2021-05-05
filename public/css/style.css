@@ -146,6 +146,12 @@ p,
     line-height: 1.4rem;
 }
 
+#caption{
+  overflow: hidden;
+  word-wrap: break-word;
+  margin-top: 10px;
+}
+
 span{
     font-family: 'Gill Sans',
     'Gill Sans MT',
