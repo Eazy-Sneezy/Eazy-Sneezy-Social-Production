@@ -148,7 +148,7 @@ p,
 
 #caption{
   overflow: hidden;
-  word-wrap: break-word;
+  word-wrap: anywhere;
   margin-top: 10px;
 }
 
