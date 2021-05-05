@@ -197,6 +197,26 @@ form {
     flex-flow: column;
 }
 
+h1.login-container.card{
+  font-size: 1rem;
+}
+
+#createEntryForm{
+    display: flex;
+    flex-flow: column;
+    width: 400px;
+    text-align: left;
+}
+
+#createEntryForm > *{
+  margin-bottom: 10px;
+}
+
+.profile-body a{
+  color: blue;
+  text-decoration: underline;
+}
+
 input {
     height: 1.4rem;
 }
