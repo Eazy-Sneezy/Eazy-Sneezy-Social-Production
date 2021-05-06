@@ -51,9 +51,28 @@
                         <form action="/entries/deleteEntry/<%= entry.id %>?_method=DELETE" method="POST">
                             <button type="submit">Delete</button>
                         </form>
+                        <%} %>
+                    </div>
+                    <!-- display comments input -->
+                    <div class="comment-section">                        
+                        <form id="createCommentForm" class="card" action="/entries/createEntryComment/<%= entry.id %>?_method=POST" method="POST">
+                          <div>
+                            <input type="text" name="comment" placeholder="my comment"></input>
+                            <button class="add-comment" type="submit">Add Comment</button>
+                          </div>  
+                        </form>
+                        <!-- show comment count for this entry -->
+                        <span>Comments: <%= entry.commentCount %></span>
+                        <!-- show list of comments -->
+                        <ul>
+                        <%for(var i=0; i<=entry.comments.length; i++){%>
+                            <li>
+                              <p><%=entry.comments[i]%></p>
+                            </li>
+                        <%} %>
+                        </ul>
                     </div>
                 </li>
-                <%}%>
             </ul>
         </div>
     </section>
