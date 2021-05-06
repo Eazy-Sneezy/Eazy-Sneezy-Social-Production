@@ -149,7 +149,7 @@ p,
 #caption{
   overflow: hidden;
   word-wrap: anywhere;
-  margin-top: 10px;
+  margin: 10px 0 20px;
 }
 
 span{
@@ -377,7 +377,7 @@ input {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -396,17 +396,38 @@ input {
 /* Entry */
 
 .like-delete{
-    margin-top: 10px;
     display: flex;
     flex-flow: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
-    width: 100%;
+    width: 50%;
 }
 
 .like-delete > form {
     width: 4rem;
-    padding: 10px 0;
+}
+
+/* Entry - Comments */
+.interact-container{
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#createCommentForm{
+    margin-bottom: 5px;
+}
+#createCommentForm > div{
+    display: flex;
+}
+
+#createCommentForm > div > input{
+    margin-right: 2rem;
+}
+
+.comment-section li{
+    padding: 5px 0;
 }
 /* Profile */
 .profile-body {
