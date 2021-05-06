@@ -146,6 +146,10 @@ p,
     line-height: 1.4rem;
 }
 
+.fa-heart{
+    font-size: 1.4rem;
+}
+
 #caption{
   overflow: hidden;
   word-wrap: anywhere;
@@ -428,6 +432,42 @@ input {
 .comment-section li{
     padding: 5px 0;
 }
+
+/* Entry - Likes */
+.heart-likes{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.heart-likes > button {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.heart-likes >button:hover {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.heart-likes >button:active {
+    outline: none;
+    border: none;
+}
+
+.heart-likes > button:focus {
+    outline: 0;
+}
+
+body>section:nth-child(3)>div>ul>li>div.interact-container>div.like-delete>form.heart-likes>span {
+    align-self: center;
+}
+
 /* Profile */
 .profile-body {
     display: flex;
