@@ -16,67 +16,67 @@
 // "validator": "^13.6.0"
 
 // get all the goodies from express
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 // express flash allows flash messages
-const flash = require('express-flash')
+const flash = require("express-flash");
 // get passport for authentication
-const passport = require('passport')
+const passport = require("passport");
 // Create a session middleware
-const session = require('express-session')
+const session = require("express-session");
 // get database connection
-const connectDB = require('./config/database')
-// how we'll use our connection. MongoDB object modeling tool 
-const mongoose = require('mongoose')
+const connectDB = require("./config/database");
+// how we'll use our connection. MongoDB object modeling tool
+const mongoose = require("mongoose");
 // MongoDB session store for Connect and Express written in Typescript
-const MongoStore = require('connect-mongo')(session)
+const MongoStore = require("connect-mongo")(session);
 // HTTP request logger middleware for node.js
-const logger = require('morgan')
+const logger = require("morgan");
 // Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
-const methodOverride = require('method-override')
+const methodOverride = require("method-override");
 // paths to different routes we'll use
-const homeRoutes = require('./routes/home')
+const homeRoutes = require("./routes/home");
 // const authRoutes = require('./routes/auth')
-const entriesRoutes = require('./routes/entries')
+const entriesRoutes = require("./routes/entries");
 
-// replit doesnt use .env. 
+// replit doesnt use .env.
 // need .env file in config folder offReplit
 
 require("dotenv").config({ path: "./config/.env" });
 
 // get passport config
-require('./config/passport')(passport)
+require("./config/passport")(passport);
 
 // connect to the database
-connectDB()
+connectDB();
 
 // use ejs in views to render html
-app.set('view engine', 'ejs')
+app.set("view engine", "ejs");
 
 // static folder with secondary files we can serve
-app.use(express.static('public'))
+app.use(express.static("public"));
 
 // body parsing.
 // Makes express encode any url it sends out
-app.use(express.urlencoded({ extended: true }))
-// Parses incoming data as JSON 
-app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+// Parses incoming data as JSON
+app.use(express.json());
 
 // enable forms with put & delete
-app.use(methodOverride('_method'))
+app.use(methodOverride("_method"));
 
 // enable logging
-app.use(logger('dev'))
+app.use(logger("dev"));
 
 // sessions connected to mongo
 app.use(
   session({
-    secret: 'keyboard cat',
+    secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
-)
+);
 
 // use passport middleware
 // init password authentication
@@ -85,18 +85,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // use express flash
-app.use(flash())
+app.use(flash());
 
-app.use('/', homeRoutes)
+app.use("/", homeRoutes);
 
 // app.use('/auth', authRoutes)
 
-app.use('/entries', entriesRoutes)
+app.use("/entries", entriesRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running lets go`)
-})
-
+  console.log(`Server is running lets go`);
+});
 
 // passport Passport is Express-compatible authentication middleware for Node.js.
 
