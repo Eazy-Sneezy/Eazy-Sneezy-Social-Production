@@ -12,7 +12,7 @@ module.exports = {
       console.log(err);
     }
   },
-  // is async needed here?
+
   getFeed: async (req, res) => {
     try {
       const entries = await Entry.find().sort({ createdAt: "desc" }).lean();
@@ -39,6 +39,9 @@ module.exports = {
         likes: [],
         user: req.user.id,
         author: req.user.userName,
+        // initialize comment count at 0, empty array of comments
+        commentCount: 0,
+        comments: [],
       });
       console.log("Entry has been added!");
       res.redirect("/profile");
@@ -86,4 +89,23 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+  // add a comment to an existing entry and using (consuming) the agreed upon Entry model  
+  createEntryComment: async (req, res) => {
+    try{
+      await Entry.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $inc: {commentCount: 1},
+          $push: { comments: req.body.comment },
+        },
+        console.log('comment has been added'),
+        res.redirect(`/entries/${req.params.id}`)
+      );
+      
+    } catch (err) {
+      console.log(err);
+      //res.redirect("feed.ejs", { entries: entries });
+    }
+  }
+ 
 };

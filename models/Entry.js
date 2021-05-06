@@ -35,6 +35,18 @@ const EntrySchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  comments: [
+    {
+    type: String,
+    postedBy: mongoose.Schema.Types.ObjectId,
+    // save the user who posted this comment(NOTE: this ref throws an error)
+    //ref: "User",
+    }    
+  ],
+  commentCount: {
+    type: Number,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("Entry", EntrySchema);

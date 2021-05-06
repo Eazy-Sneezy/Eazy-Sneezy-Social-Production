@@ -27,4 +27,7 @@ router.put("/unlikeEntry/:id", entriesController.unlikeEntry);
 
 router.delete("/deleteEntry/:id", entriesController.deleteEntry);
 
+// createComment on an existing entry
+router.post("/createEntryComment/:id", entriesController.createEntryComment);
+
 module.exports = router;
