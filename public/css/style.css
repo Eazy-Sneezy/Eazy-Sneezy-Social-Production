@@ -384,6 +384,19 @@ input {
     margin-bottom: 20px;
 }
 
+.entry-topper ~ a {
+    margin-bottom: 1rem;
+}
+.entry-topper~a~div{
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+}
+
+body>section:nth-child(3)>div>ul>li>div:nth-child(3)>span.fa.fa-heart{
+    margin-right: 4px;
+}
+
 /* Like button */
 .like-container{
     display: flex;
