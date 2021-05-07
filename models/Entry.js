@@ -17,6 +17,10 @@ const EntrySchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
+  cloudinaryId: {
+    type: String,
+    require: true,
+  },
   likes: [
     {
       type: mongoose.Schema.Types.ObjectId,

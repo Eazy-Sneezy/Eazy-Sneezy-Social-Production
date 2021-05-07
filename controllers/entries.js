@@ -1,5 +1,7 @@
-const { ObjectId } = require("bson");
+//const { ObjectId } = require("bson");
+const cloudinary = require("../middleware/cloudinary");
 const Entry = require("../models/Entry");
+//const { post, entry } = require("../routes/home");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -31,9 +33,13 @@ module.exports = {
   },
   createEntry: async (req, res) => {
     try {
+      // upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+      console.log(result);
       await Entry.create({
         title: req.body.title,
-        image: "/uploads/" + req.file.filename,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
         caption: req.body.caption,
         likeCount: 0,
         likes: [],
@@ -82,7 +88,12 @@ module.exports = {
   },
   deleteEntry: async (req, res) => {
     try {
-      await Entry.findOneAndDelete({ _id: req.params.id });
+      // Find post by id
+      let entry = await Entry.findById({ _id: req.params.id});
+      // Delete image from cloudinary
+      await cloudinary.uploader.destroy(entry.cloudinaryId);
+
+      await Entry.remove({ _id: req.params.id });
       console.log("Deleted Entry");
       res.redirect("/profile");
     } catch (err) {
