@@ -40,8 +40,18 @@
             <img class="feed-img" src="<%= entries[i].image%>">
           </a>
           <div>
-            <span class="fa fa-heart"></span>
-            <span><%= entries[i].likeCount %></span>
+            <%if(entries[i].likes){%>
+            <form class="heart-likes" action="/entries/unlikeEntry/<%= entries.id %>?_method=PUT" method="POST">
+              <button type="submit"><i class="fa fa-heart"></i></button>
+              <span><%= entries.likeCount %></span>
+            </form>
+            <%} else {%>
+            <form class="heart-likes" action="/entries/likeEntry/<%= entries.id %>?_method=PUT" method="POST">
+              <button type="submit"><i class="far fa-heart"></i></button>
+              <span><%= entries.likeCount %></span>
+            </form>
+
+            <%} %>
           </div>
         </li>
         <% } %>

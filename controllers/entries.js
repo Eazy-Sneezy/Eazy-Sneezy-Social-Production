@@ -1,5 +1,6 @@
 const { ObjectId } = require("bson");
 const Entry = require("../models/Entry");
+const Feed = require("../models/Feed");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -89,23 +90,36 @@ module.exports = {
       res.redirect("/profile");
     }
   },
-  // add a comment to an existing entry and using (consuming) the agreed upon Entry model  
+  // add a comment to an existing entry and using (consuming) the agreed upon Entry model
   createEntryComment: async (req, res) => {
-    try{
+    try {
       await Entry.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $inc: {commentCount: 1},
+          $inc: { commentCount: 1 },
           $push: { comments: req.body.comment },
         },
-        console.log('comment has been added'),
+        console.log("comment has been added"),
         res.redirect(`/entries/${req.params.id}`)
       );
-      
     } catch (err) {
       console.log(err);
       //res.redirect("feed.ejs", { entries: entries });
     }
-  }
- 
+  },
+  likeEntryFeed: async (req, res) => {
+    try {
+      await Feed.findOneAndUpdate(
+        { _id: req.params.id, likes: { $ne: ObjectId(req.user.id) } },
+        {
+          $inc: { likeCount: 1 },
+          $push: { likes: ObjectId(req.user.id) },
+        },
+        console.log("Liked the entry!"),
+        res.redirect(`/entries`)
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
