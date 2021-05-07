@@ -91,7 +91,7 @@ module.exports = {
       // Find post by id
       let entry = await Entry.findById({ _id: req.params.id});
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(Entry.cloudinaryId);
+      await cloudinary.uploader.destroy(entry.cloudinaryId);
 
       await Entry.remove({ _id: req.params.id });
       console.log("Deleted Entry");
