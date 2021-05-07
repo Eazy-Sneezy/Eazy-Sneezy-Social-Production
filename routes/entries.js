@@ -24,7 +24,8 @@ router.post(
 
 router.put("/likeEntry/:id", entriesController.likeEntry);
 router.put("/unlikeEntry/:id", entriesController.unlikeEntry);
-
+router.put("/likeFeedEntry/:id", entriesController.likeFeedEntry);
+router.put("/unlikeFeedEntry/:id", entriesController.unlikeFeedEntry);
 router.delete("/deleteEntry/:id", entriesController.deleteEntry);
 
 // createComment on an existing entry

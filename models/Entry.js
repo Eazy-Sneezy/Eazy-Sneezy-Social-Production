@@ -37,11 +37,11 @@ const EntrySchema = new mongoose.Schema({
   },
   comments: [
     {
-    type: String,
-    postedBy: mongoose.Schema.Types.ObjectId,
-    // save the user who posted this comment(NOTE: this ref throws an error)
-    //ref: "User",
-    }    
+      type: String,
+      postedBy: mongoose.Schema.Types.ObjectId,
+      // save the user who posted this comment(NOTE: this ref throws an error)
+      //ref: "User",
+    },
   ],
   commentCount: {
     type: Number,

@@ -1,6 +1,5 @@
 const { ObjectId } = require("bson");
 const Entry = require("../models/Entry");
-const Feed = require("../models/Feed");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -17,7 +16,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const entries = await Entry.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { entries: entries });
+      res.render("feed.ejs", { entries: entries, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -30,6 +29,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   createEntry: async (req, res) => {
     try {
       await Entry.create({
@@ -81,6 +81,35 @@ module.exports = {
       console.log(err);
     }
   },
+  likeFeedEntry: async (req, res) => {
+    try {
+      await Entry.findOneAndUpdate(
+        { _id: req.params.id, likes: ObjectId(req.user.id) },
+        {
+          $inc: { likeCount: 1 },
+          $push: { likes: ObjectId(req.user.id) },
+        },
+        res.redirect(`/feed`)
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  unlikeFeedEntry: async (req, res) => {
+    try {
+      await Entry.findOneAndUpdate(
+        { _id: req.params.id, likes: ObjectId(req.user.id) },
+        {
+          $inc: { likeCount: -1 },
+          $pull: { likes: ObjectId(req.user.id) },
+        },
+        console.log("unLiked the entry!"),
+        res.redirect(`/feed`)
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  },
   deleteEntry: async (req, res) => {
     try {
       await Entry.findOneAndDelete({ _id: req.params.id });
@@ -105,21 +134,6 @@ module.exports = {
     } catch (err) {
       console.log(err);
       //res.redirect("feed.ejs", { entries: entries });
-    }
-  },
-  likeEntryFeed: async (req, res) => {
-    try {
-      await Feed.findOneAndUpdate(
-        { _id: req.params.id, likes: { $ne: ObjectId(req.user.id) } },
-        {
-          $inc: { likeCount: 1 },
-          $push: { likes: ObjectId(req.user.id) },
-        },
-        console.log("Liked the entry!"),
-        res.redirect(`/entries`)
-      );
-    } catch (err) {
-      console.log(err);
     }
   },
 };
