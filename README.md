@@ -2,7 +2,7 @@
 
 Social media platform that allows users to share pictures and follow each other. Instagram clone of sorts.
 
-Link: https://eazy-sneezy-social-media.herokuapp.com/
+Link: https://eazy-sneezy-social.herokuapp.com/
 
 ## How it's made
 
