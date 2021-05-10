@@ -16,6 +16,8 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const entries = await Entry.find().sort({ createdAt: "desc" }).lean();
+      console.log(entries);
+      // TODO: why isn't entries not liking/unliking? inspect here
       res.render("feed.ejs", { entries: entries, user: req.user });
     } catch (err) {
       console.log(err);
@@ -24,6 +26,7 @@ module.exports = {
   getEntry: async (req, res) => {
     try {
       const entry = await Entry.findById(req.params.id);
+      console.log(entry);
       res.render("entry.ejs", { entry: entry, user: req.user });
     } catch (err) {
       console.log(err);
@@ -60,7 +63,7 @@ module.exports = {
           $push: { likes: ObjectId(req.user.id) },
         },
         console.log("Liked the entry!"),
-        res.redirect(`/entries/${req.params.id}`)
+        res.redirect(req.origin)
       );
     } catch (err) {
       console.log(err);
@@ -75,7 +78,8 @@ module.exports = {
           $pull: { likes: ObjectId(req.user.id) },
         },
         console.log("unLiked the entry!"),
-        res.redirect(`/entries/${req.params.id}`)
+        res.redirect(req.origin)
+        // TODO: redirect to page they were on as they clicked "like"
       );
     } catch (err) {
       console.log(err);
@@ -84,10 +88,10 @@ module.exports = {
   likeFeedEntry: async (req, res) => {
     try {
       await Entry.findOneAndUpdate(
-        { _id: req.params.id, likes: ObjectId(req.user.id) },
+        { _id: req.params.id, likes: { $ne: req.user.id } },
         {
           $inc: { likeCount: 1 },
-          $push: { likes: ObjectId(req.user.id) },
+          $push: { likes: req.user.id },
         },
         res.redirect(`/feed`)
       );
@@ -98,7 +102,7 @@ module.exports = {
   unlikeFeedEntry: async (req, res) => {
     try {
       await Entry.findOneAndUpdate(
-        { _id: req.params.id, likes: ObjectId(req.user.id) },
+        { _id: req.params.id },
         {
           $inc: { likeCount: -1 },
           $pull: { likes: ObjectId(req.user.id) },
