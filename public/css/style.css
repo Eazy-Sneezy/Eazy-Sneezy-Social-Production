@@ -446,6 +446,15 @@ body>section:nth-child(3)>div>ul>li>div:nth-child(3)>span.fa.fa-heart{
     padding: 5px 0;
 }
 
+@media screen and (max-width: 768px) {
+    #createCommentForm>div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #createCommentForm>div>input{
+        margin-bottom: 10px;
+    }
+}
 /* Entry - Likes */
 .heart-likes{
     display: flex;
