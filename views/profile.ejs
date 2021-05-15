@@ -26,12 +26,12 @@
 </head>
 
 
-<body class="profile-body">
+<body>
   <section class="topnav">
 
     <!-- Centered link -->
     <div class="topnav-centered">
-      <h1><a href="/profile" class="active">Eazy Sneezy Social Profile</a></h1>
+      <h1><a href="/profile" class="active">Eazy Sneezy Social</a></h1>
     </div>
         <!-- Left-alighned user info -->
         <div class="topnav-left">
@@ -50,25 +50,27 @@
     </div>
   </section>
 
-<div>
+<div class="profile-body">
+  <div class="feed-container">
+    <form id="createEntryForm" action="entries/createEntry" enctype="multipart/form-data" method="POST">
+      <p>Create a new entry:</p>
+      <div>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Entry title" required>
+      </div>
+      <div>
+        <textarea class="form-control" id="caption" name="caption" placeholder="enter caption" required></textarea>
+      </div>
+      <div>
+        <label for="imgUpload" class="form-label">Add image</label>
+        <input type="file" class="form-control" id="imageUpload" name="file">
+      </div>
+      <button type="submit" class="btn btn-primary login-button" value="Upload">Submit</button>
+    </form>
 
-  <p id="login" class="login-container card" ><strong>User Name</strong>: <%= user.userName %></p>
-  <p class="login-container card"><strong>Email</strong>: <%= user.email %></p>
-  </p>
- 
+  </div>
+
+  
 </div>
-<form id="createEntryForm" class="card" action="entries/createEntry" enctype="multipart/form-data" method="POST">
-  <p>Create a new entry:</p>
-  <div class="mb-3">
-    <input type="text" class="form-control" id="title" name="title" placeholder="Entry title" required>
-  </div>
-  <div class="mb-3">
-    <textarea class="form-control" id="caption" name="caption" placeholder="enter caption" required></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="imgUpload" class="form-label">Add image</label>
-    <input type="file" class="form-control" id="imageUpload" name="file">
-  </div>
-    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-</form>
+
+
 </body>  
