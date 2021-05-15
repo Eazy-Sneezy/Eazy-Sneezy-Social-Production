@@ -152,13 +152,19 @@ p,
   margin: 10px 0 20px;
 }
 
-span {
+/* span {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgba(40, 40, 40, 0.88);
   font-size: 1.2rem;
   line-height: 1.2rem;
   font-weight: 200;
+} */
+
+span {
+.bold-text {
+  font-weight: 700;
 }
+
 /* LOGIN */
 .login-body {
   background: linear-gradient(to bottom, rgba(73, 174, 228, 0.8), white)
@@ -287,6 +293,18 @@ a {
   font-size: 17px;
 }
 
+.topnav-left {
+  float: left;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav-left p {
+  color: #f2f2f2;
+}
+
 .topnav-centered > h1 a {
   font-size: 2rem;
 }
@@ -315,9 +333,10 @@ a {
   display: none;
 }
 /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 568px) {
   .topnav a,
-  .topnav-right {
+  .topnav-right,
+  .topnav-left {
     float: none;
     display: block;
   }
@@ -441,7 +460,8 @@ body
   padding: 5px 0;
 }
 
-@media screen and (max-width: 568px) {
+
+@media screen and (max-width: 768px) {
   #createCommentForm > div {
     display: flex;
     flex-wrap: wrap;

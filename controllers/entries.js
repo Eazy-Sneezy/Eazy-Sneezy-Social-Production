@@ -18,7 +18,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const entries = await Entry.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { entries: entries });
+      res.render("feed.ejs", { entries: entries, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -89,7 +89,7 @@ module.exports = {
   deleteEntry: async (req, res) => {
     try {
       // Find post by id
-      let entry = await Entry.findById({ _id: req.params.id});
+      let entry = await Entry.findById({ _id: req.params.id });
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(entry.cloudinaryId);
 
@@ -100,23 +100,21 @@ module.exports = {
       res.redirect("/profile");
     }
   },
-  // add a comment to an existing entry and using (consuming) the agreed upon Entry model  
+  // add a comment to an existing entry and using (consuming) the agreed upon Entry model
   createEntryComment: async (req, res) => {
-    try{
+    try {
       await Entry.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $inc: {commentCount: 1},
+          $inc: { commentCount: 1 },
           $push: { comments: req.body.comment },
         },
-        console.log('comment has been added'),
+        console.log("comment has been added"),
         res.redirect(`/entries/${req.params.id}`)
       );
-      
     } catch (err) {
       console.log(err);
       //res.redirect("feed.ejs", { entries: entries });
     }
-  }
- 
+  },
 };
