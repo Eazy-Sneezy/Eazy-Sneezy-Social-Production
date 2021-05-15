@@ -80,12 +80,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -100,411 +100,431 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    line-height: 1;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Base Looks */
 p,
-.entry-title>h2 {
-    font-family: 'Gill Sans',
-    'Gill Sans MT',
-    Calibri,
-    'Trebuchet MS',
-    sans-serif;
-    color: rgba(40, 40, 40, 0.88);
-    font-size: 1.4rem;
-    line-height: 1.4rem;
+.entry-title > h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgba(40, 40, 40, 0.88);
+  font-size: 1.4rem;
+  line-height: 1.4rem;
 }
 
-.fa-heart{
-    font-size: 1.4rem;
+.fa-heart {
+  font-size: 1.4rem;
 }
 
-#caption{
+#caption {
   overflow: hidden;
   word-wrap: anywhere;
   margin: 10px 0 20px;
 }
 
-span{
-    font-family: 'Gill Sans',
-    'Gill Sans MT',
-    Calibri,
-    'Trebuchet MS',
-    sans-serif;
-    color: rgba(40, 40, 40, 0.88);
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    font-weight: 200;
+/* span {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgba(40, 40, 40, 0.88);
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: 200;
+} */
+
+.bold-text {
+  font-weight: 700;
 }
+
 /* LOGIN */
 .login-body {
-    background: linear-gradient(to bottom, rgba(73, 174, 228, .8), white) no-repeat
+  background: linear-gradient(to bottom, rgba(73, 174, 228, 0.8), white)
+    no-repeat;
 }
 
 .header {
-    margin: 8% 5% 10% 5%;
-    display: flex;
-    text-align: center;
+  margin: 8% 5% 10% 5%;
+  display: flex;
+  text-align: center;
 }
 
-.header>h1 {
-    color: white;
-    font: 400 3rem/3rem normal sans-serif;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.header > h1 {
+  color: white;
+  font: 400 3rem/3rem normal sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .header,
 .login-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #login {
-    width: 400px;
-    padding: 50px 20px;
+  width: 400px;
+  padding: 50px 20px;
 }
 
 #login,
 .signin-options {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 form {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
 }
 
-h1.login-container.card{
+h1.login-container.card {
   font-size: 1rem;
 }
 
-#createEntryForm{
-    display: flex;
-    flex-flow: column;
-    width: 400px;
-    text-align: left;
+#createEntryForm {
+  display: flex;
+  flex-flow: column;
+  width: 400px;
+  text-align: left;
 }
 
-#createEntryForm > *{
+#createEntryForm > * {
   margin-bottom: 10px;
 }
 
-.profile-body a{
+.profile-body a {
   color: blue;
   text-decoration: underline;
 }
 
 input {
-    height: 1.4rem;
+  height: 1.4rem;
 }
 
 .signin-container {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
-.signin-container>a, a {
-    text-decoration: none;
-    color: rgb(181, 181, 181);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.signin-container > a,
+a {
+  text-decoration: none;
+  color: rgb(181, 181, 181);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .signin-container,
 .login-container {
-    flex: 1;
+  flex: 1;
 }
 
 .login-button {
-    color: whitesmoke;
-    background-color: dodgerblue;
-    font-family: 'Lucida Sans',
-        'Lucida Sans Regular',
-        'Lucida Grande',
-        'Lucida Sans Unicode',
-        Geneva,
-        Verdana,
-        sans-serif;
-    text-decoration: none;
-    padding: 4px;
-    width: 80px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 40%;
+  color: whitesmoke;
+  background-color: dodgerblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  padding: 4px;
+  width: 80px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 40%;
 }
 
-.button-container{
-    justify-content: flex-end;
+.button-container {
+  justify-content: flex-end;
 }
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 20px;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Site wide navbar */
 /* Add a blue background color to the top navigation */
 .topnav {
-    position: relative;
-    background-color:rgba(73, 174, 228, .8);
-    overflow: hidden;
-    width: 100vw;
+  position: relative;
+  background-color: rgba(73, 174, 228, 0.8);
+  overflow: hidden;
+  width: 100vw;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 18px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.topnav-centered > h1 a{
-    font-size: 2rem;
+.topnav-left {
+  float: left;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav-left p {
+  color: #f2f2f2;
+}
+
+.topnav-centered > h1 a {
+  font-size: 2rem;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 /* Centered section inside the top navigation */
 .topnav-centered a {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Right-aligned section inside the top navigation */
 .topnav-right {
-    float: right;
+  float: right;
 }
 
 .topnav .icon {
-    display: none;
+  display: none;
 }
 /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
-@media screen and (max-width: 600px) {
-    .topnav a,
-    .topnav-right {
-        float: none;
-        display: block;
-    }
+@media screen and (max-width: 568px) {
+  .topnav a,
+  .topnav-right,
+  .topnav-left {
+    float: none;
+    display: block;
+  }
 
-    .topnav-centered a {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
 
-.test{
+.test {
   font-size: 40px;
 }
 @media screen and (max-width: 600px) {
-
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
 }
 
 /* Feed */
-.feed-container{
-    padding: 5% 8%;
+.feed-container {
+  padding: 5% 8%;
 }
 
-.feed-container > ul >li{
-    padding: 2% 4%;
-    margin-bottom: 20px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.feed-container > ul > li {
+  padding: 2% 4%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 .feed-container > ul > li > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 70%;
 }
 
-.feed-img, .entry-img{
-    max-width: 100%;
+.feed-img,
+.entry-img {
+  max-width: 100%;
 }
 
-.entry-topper{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
+.entry-topper {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .entry-topper ~ a {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
-.entry-topper~a~div{
-    display: flex;
-    justify-content: flex-end;
-    width: 70%;
+.entry-topper ~ a ~ div {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
 }
 
-body>section:nth-child(3)>div>ul>li>div:nth-child(3)>span.fa.fa-heart{
-    margin-right: 4px;
+body
+  > section:nth-child(3)
+  > div
+  > ul
+  > li
+  > div:nth-child(3)
+  > span.fa.fa-heart {
+  margin-right: 4px;
 }
 
 /* Like button */
-.like-container{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-    width: 70%;
+.like-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  width: 70%;
 }
-.fa-heart{
-    color: rgba(213, 8, 8, 0.914);
-    cursor: pointer;
+.fa-heart {
+  color: rgba(213, 8, 8, 0.914);
+  cursor: pointer;
 }
 
 /* Entry */
 
-.like-delete{
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 50%;
+.like-delete {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 50%;
 }
 
 .like-delete > form {
-    width: 4rem;
+  width: 4rem;
 }
 
 /* Entry - Comments */
-.interact-container{
-    display: flex;
-    flex-flow: row-reverse;
-    justify-content: space-between;
-    width: 100%;
+.interact-container {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+  width: 100%;
 }
 
-#createCommentForm{
-    margin-bottom: 5px;
+#createCommentForm {
+  margin-bottom: 5px;
 }
-#createCommentForm > div{
-    display: flex;
-}
-
-#createCommentForm > div > input{
-    margin-right: 2rem;
+#createCommentForm > div {
+  display: flex;
 }
 
-.comment-section li{
-    padding: 5px 0;
+#createCommentForm > div > input {
+  margin-right: 2rem;
+}
+
+.comment-section li {
+  padding: 5px 0;
 }
 
 @media screen and (max-width: 768px) {
-    #createCommentForm>div {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #createCommentForm>div>input{
-        margin-bottom: 10px;
-    }
+  #createCommentForm > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #createCommentForm > div > input {
+    margin-bottom: 10px;
+  }
 }
 /* Entry - Likes */
-.heart-likes{
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-    margin-bottom: 2rem;
+.heart-likes {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 }
 
 .heart-likes > button {
-    background: transparent;
-    box-shadow: 0px 0px 0px transparent;
-    border: 0px solid transparent;
-    text-shadow: 0px 0px 0px transparent;
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
 }
 
-.heart-likes >button:hover {
-    background: transparent;
-    box-shadow: 0px 0px 0px transparent;
-    border: 0px solid transparent;
-    text-shadow: 0px 0px 0px transparent;
+.heart-likes > button:hover {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
 }
 
-.heart-likes >button:active {
-    outline: none;
-    border: none;
+.heart-likes > button:active {
+  outline: none;
+  border: none;
 }
 
 .heart-likes > button:focus {
-    outline: 0;
+  outline: 0;
 }
 
-body>section:nth-child(3)>div>ul>li>div.interact-container>div.like-delete>form.heart-likes>span {
-    align-self: center;
+body
+  > section:nth-child(3)
+  > div
+  > ul
+  > li
+  > div.interact-container
+  > div.like-delete
+  > form.heart-likes
+  > span {
+  align-self: center;
 }
 
 /* Profile */
 .profile-body {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: linear-gradient(to bottom, rgba(73, 174, 228, .8), white) no-repeat
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(73, 174, 228, 0.8), white)
+    no-repeat;
 }
 
 /* style button to post a picture */
 
 /* style button to add picture entry */
 
-
 /* style button to go home */
-
 
 /* style button to see messages */
 
